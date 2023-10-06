@@ -1,0 +1,104 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "title": "Age distribution of chess players across countries",
+  "data":{
+    "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x":{
+      "field":"Country",
+      "type": "nominal",
+      "title": "Countries",
+      "scale":{
+        "domain":[
+          "Russia",
+          "India",
+          "Germany",
+          "Spain",
+          "France",
+          "Poland",
+          "Italy",
+          "Iran",
+          "Turkey",
+          "United States of America"
+        ]
+      }
+    },
+    "y":{
+      
+      "field": "Age Avg",
+      "type": "quantitative",
+      "title": "Age"
+    },
+
+    "color":{
+      "field": "Country",
+      "type": "nominal",
+      "scale":{
+        "domain":[
+          "Russia",
+          "India",
+          "Germany",
+          "Spain",
+          "France",
+          "Poland",
+          "Italy",
+          "Iran",
+          "Turkey",
+          "United States of America"
+        ]
+      }
+    },
+    "tooltip": [
+      {"field": "Country", "type":"nominal"},
+      {"field": "Age Avg", "type": "quantitative" , "title": "Age"}
+    ]
+  },
+  "params": [
+    {
+      "name": "Country_selection",
+      "bind":{
+        "input": "select",
+        "options": [
+          null,
+          "Russia",
+          "India",
+          "Germany",
+          "Spain",
+          "France",
+          "Poland",
+          "Italy",
+          "Iran",
+          "Turkey",
+          "United States of America"
+        ],
+        "labels": [
+          "Show All",
+          "Russia",
+          "India",
+          "Germany",
+          "Spain",
+          "France",
+          "Poland",
+          "Italy",
+          "Iran",
+          "Turkey",
+          "United States of America"
+        ],
+        "name": "Country selection "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Country_selection == null || datum.Country == Country_selection" }
+  ]
+  
+
+
+
+
+
+}
