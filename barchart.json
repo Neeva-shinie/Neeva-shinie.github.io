@@ -56,9 +56,9 @@
                 "opacity":{
                   "condition":{
                       "test":"datum['Country'] == 'Russia'|| datum['Country'] == 'India'",
-                      "value": 0
+                      "value": 1
                   },
-                  "value": 1
+                  "value": 0
 
               }
             }

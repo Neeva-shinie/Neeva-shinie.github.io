@@ -6,7 +6,7 @@
   "data":{
     "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
   },
-    "mark": "bar",
+    "mark": "circle",
     "encoding": {
       "x":{
         "field":"Age Avg",
@@ -19,7 +19,10 @@
 
         "field": "Num Players",
         "type": "quantitative",
-        "title": "Players"
+        "title": "Players",
+        "axis": {"tickCount": 7},
+        "scale":{"type": "linear", "domain":[100,40000]}
+
       },
 
       "color":{
