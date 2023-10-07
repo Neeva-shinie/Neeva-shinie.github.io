@@ -1,0 +1,108 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "title": "Age distribution of chess players across countries",
+    "data":{
+      "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
+    },
+    "layer": [
+        {
+            "mark": "circle",
+            "encoding": {
+                "x":{
+                  "field":"Age Avg",
+                  "type": "quantitative",
+                  "title": "Age",
+                  "axis": {"tickCount":7},
+                  "scale":{"type": "linear", "domain":[20,60]}
+                },
+                "y":{
+                  "field": "Num Players",
+                  "type": "quantitative",
+                  "title": "Players",
+                  "axis": {"tickCount": 7},
+                  "scale":{"type": "linear", "domain":[100,40000]}
+                },
+                "color":{
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "size":{
+                  "field": "Num Players",
+                  "type": "quantitative"
+
+                },
+                "opacity":{"value": 0.6},
+                "tooltip": [
+                    {"field": "Num Players", "type": "quantitative", "title":"Players"},
+                    {"field": "Country", "type":"nominal"},
+                    {"field": "Age Avg", "type": "quantitative" , "title": "Age"}
+                ]
+            }
+        },
+        {
+            "mark":{
+                "type": "text",
+                "align":"center",
+                "baseline":"line-bottom",
+                "dx": 10,
+                "fontSize": 11.5,
+                "fontStyle": "italic"
+            },
+            "encoding": {
+                "text":{"field":"Country", "type": "nominal"},
+                "color":{"value":"black"},
+                "opacity":{
+                  "condition":{
+                      "test":"datum['Country'] == 'Russia'|| datum['Country'] == 'India'",
+                      "value": 0
+                  },
+                  "value": 1
+
+              }
+            }
+
+        }
+    ],
+    "params": [
+        {
+          "name": "Country_selection",
+          "bind":{
+            "input": "select",
+            "options": [
+              null,
+              "Russia",
+              "India",
+              "Germany",
+              "Spain",
+              "France",
+              "Poland",
+              "Italy",
+              "Iran",
+              "Turkey",
+              "United States of America"
+            ],
+            "labels": [
+              "Show All",
+              "Russia",
+              "India",
+              "Germany",
+              "Spain",
+              "France",
+              "Poland",
+              "Italy",
+              "Iran",
+              "Turkey",
+              "United States of America"
+            ],
+            "name": "Selection of top 10 countries with most players "
+          }
+        }
+      ],
+      "transform": [
+        {"filter": "Country_selection == null || datum.Country == Country_selection" }
+    ]
+
+
+}

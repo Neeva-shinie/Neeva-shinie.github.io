@@ -6,57 +6,36 @@
   "data":{
     "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
   },
-  "mark": "bar",
-  "encoding": {
-    "x":{
-      "field":"Country",
-      "type": "nominal",
-      "title": "Countries",
-      "scale":{
-        "domain":[
-          "Russia",
-          "India",
-          "Germany",
-          "Spain",
-          "France",
-          "Poland",
-          "Italy",
-          "Iran",
-          "Turkey",
-          "United States of America"
-        ]
-      }
-    },
-    "y":{
-      
-      "field": "Age Avg",
-      "type": "quantitative",
-      "title": "Age"
-    },
+    "mark": "bar",
+    "encoding": {
+      "x":{
+        "field":"Age Avg",
+        "type": "quantitative",
+        "title": "Age",
+        "axis": {"tickCount":7},
+        "scale":{"type": "linear", "domain":[20,60]}
+      },
+      "y":{
 
-    "color":{
-      "field": "Country",
-      "type": "nominal",
-      "scale":{
-        "domain":[
-          "Russia",
-          "India",
-          "Germany",
-          "Spain",
-          "France",
-          "Poland",
-          "Italy",
-          "Iran",
-          "Turkey",
-          "United States of America"
-        ]
-      }
+        "field": "Num Players",
+        "type": "quantitative",
+        "title": "Players"
+      },
+
+      "color":{
+        "field": "Country",
+        "type": "nominal"
+      },
+      "size":{
+        "field": "Num Players",
+        "type": "quantitative"
+      },
+      "tooltip": [
+        {"field": "Country", "type":"nominal"},
+        {"field": "Age Avg", "type": "quantitative" , "title": "Age"},
+        {"field": "Num Players", "type": "quantitative", "title":"Players"}
+      ]
     },
-    "tooltip": [
-      {"field": "Country", "type":"nominal"},
-      {"field": "Age Avg", "type": "quantitative" , "title": "Age"}
-    ]
-  },
   "params": [
     {
       "name": "Country_selection",
@@ -88,7 +67,7 @@
           "Turkey",
           "United States of America"
         ],
-        "name": "Country selection "
+        "name": "Selection of top 10 countries with most players "
       }
     }
   ],
