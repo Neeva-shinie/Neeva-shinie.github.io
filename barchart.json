@@ -71,13 +71,13 @@
             "mark":{
                 "type": "text",
                 "align":"center",
-                "baseline":"middle",
-                "dx": -10,
+                "baseline":"top",
+                "dx": -120,
+                "dy": -140,
                 "fontSize": 11.5,
-                "fontStyle": "italic"
-            },
-            "encoding": {
-                "text": {"title":"India has the youngest average chess players"}
+                "fontStyle": "italic",
+                "fontWeight":"normal",
+                "text": "India has the youngest average chess player"
             }
         }
     ],
