@@ -56,7 +56,8 @@
                 },
                 "size":{
                   "field": "Num Players",
-                  "type": "quantitative"
+                  "type": "quantitative",
+                  "title": "Number of Players"
 
                 },
                 "opacity":{"value": 0.6},
