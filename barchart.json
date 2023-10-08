@@ -16,6 +16,7 @@
                   "title": "Age",
                   "axis": {"tickCount":7},
                   "scale":{"type": "linear", "domain":[20,60]}
+                    
                 },
                 "y":{
                   "field": "Num Players",
@@ -26,7 +27,32 @@
                 },
                 "color":{
                     "field": "Country",
-                    "type": "nominal"
+                    "type": "nominal",
+                    "scale": {
+                      "domain": [
+                        "Russia",
+                        "India",
+                        "Germany",
+                        "Spain",
+                        "France",
+                        "Poland",
+                        "Italy",
+                        "Iran",
+                        "Turkey",
+                        "United States of America",
+                        "Hungary",
+                        "Greece",
+                        "Brazil",
+                        "Serbia",
+                        "Romania",
+                        "Ukraine",
+                        "Netherlands",
+                        "Argentina",
+                        "Greenland",
+                        "Slovakia",
+                        "Sweden"
+                      ]
+                    }  
                 },
                 "size":{
                   "field": "Num Players",
@@ -45,24 +71,14 @@
             "mark":{
                 "type": "text",
                 "align":"center",
-                "baseline":"line-bottom",
-                "dx": 10,
+                "baseline":"middle",
+                "dx": -10,
                 "fontSize": 11.5,
                 "fontStyle": "italic"
             },
             "encoding": {
-                "text":{"field":"Country", "type": "nominal"},
-                "color":{"value":"black"},
-                "opacity":{
-                  "condition":{
-                      "test":"datum['Country'] == 'Russia'|| datum['Country'] == 'India'",
-                      "value": 1
-                  },
-                  "value": 0
-
-              }
+                "text": {"title":"India has the youngest average chess players"}
             }
-
         }
     ],
     "params": [
