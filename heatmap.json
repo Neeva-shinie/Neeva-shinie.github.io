@@ -1,16 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/games.csv"},
   "title": "Heatmap Sample",
   "mark": "rect",
   "encoding": {
     "y": {
-      "field": "opening_name",
+      "field": "victory_status",
       "type": "ordinal",
       "axis": {"title": ""}
     },
     "x": {
-      "field": "victory_status",
+      "field": "opening_name",
       "type": "ordinal",
       "axis": {"title": ""}
     },
