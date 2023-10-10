@@ -2,6 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
   "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/sanitised_game.csv"},
   "title": "Frequency of openings in chess and their winning rate",
+  "height": 300,
+  "width": 500,
   "mark": "rect",
   "encoding": {
     "y": {
