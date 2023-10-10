@@ -4,7 +4,7 @@
     "width": 500,
     "height": 300,
     "data": {
-      "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/aggregate-dataset.csv"
+      "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
     },
     "mark": {
       "type": "arc",
