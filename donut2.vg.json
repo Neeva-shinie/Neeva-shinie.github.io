@@ -22,6 +22,9 @@
         ]
       },
       {
+        "aggregate": [{"op":"count", "field": "GM_category", "as": "category" }]
+      },
+      {
         "calculate": "datum.TotalGM + datum.TotalWGM",
         "as": "totalSum"
       },
@@ -40,14 +43,14 @@
     },
     "encoding": {
       "theta": {
-        "field": "",
+        "field": "TotalGM",
         "type": "quantitative"
       },
       "color": {
-        "field": "GMs",
+        "field": "TotalGM",
         "type": "nominal",
         "scale": {
-          "domain": ["GMs", "WGMs"],
+          "domain": ["TotalGM", "WGMs"],
           "range": ["#1f77b4", "#ff7f0e"]
         }
       }
