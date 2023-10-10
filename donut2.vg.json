@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Percentage of male and female players in different ranks",
+    "width": 500,
+    "height": 300,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
+    },
+    "transform": [
+      {
+        "window": [
+          {
+            "op": "sum",
+            "field": "GMs",
+            "as": "TotalGM"
+          },
+          {
+            "op": "sum",
+            "field": "WGMs",
+            "as": "TotalWGM"
+          }
+        ]
+      },
+      {
+        "calculate": "datum.TotalGM + datum.TotalWGM",
+        "as": "totalSum"
+      },
+      {
+        "calculate": "(datum.TotalGM / datum.totalSum) * 100",
+        "as": "percent_gm"
+      },
+      {
+        "calculate": "(datum.TotalWGM / datum.totalSum) * 100",
+        "as": "percent_wgm"
+      }
+    ],
+    "mark": {
+      "type": "arc",
+      "innerRadius": 50
+    },
+    "encoding": {
+      "theta": {
+        "field": "",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "GMs",
+        "type": "nominal",
+        "scale": {
+          "domain": ["GMs", "WGMs"],
+          "range": ["#1f77b4", "#ff7f0e"]
+        }
+      }
+    }
+  }
+  

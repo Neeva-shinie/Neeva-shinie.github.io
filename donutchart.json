@@ -25,20 +25,31 @@
             }]
 
         },
+
         {
-            "calculate": "datum.TotalGM/datum.TotalWGM *100",
-            "as":"PercentageOfMGM"
+            "aggregate": [{ "op": "count", "as": "count_gm" }],
+            "groupby": ["GMs"]
+          },
 
-        },
-        {   
-            "calculate": "datum.TotalWGM/datum.TotalGM *100",
-            "as": "PercentageOfWGM"
+        {
+            "aggregate": [{ "op": "count", "as": "count_wgm" }],
+            "groupby": ["WGMs"]
+          },
 
-        }],
+
+          {
+            "calculate": "(datum.count_gm / (datum.TotalGM + datum.TotalWGM)) * 100",
+            "as": "percent_gm"
+          },
+
+          {
+            "calculate": "(datum.count_wgm / (datum.TotalGM + datum.TotalWGM)) * 100",
+            "as": "percent_wgm"
+          }
+    
+    ],
         "encoding": {
-            "theta":{"field":"PercentageOfMGM", "type": "quantitative"}
-
-
+            "theta":{"field":"percent_gm", "type": "quantitative"}
 
         
         }

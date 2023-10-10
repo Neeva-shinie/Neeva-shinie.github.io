@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
   "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/sanitised_game.csv"},
-  "title": "Heatmap Sample",
+  "title": "Frequency of openings in chess and their winning rate",
   "mark": "rect",
   "encoding": {
     "y": {
@@ -10,7 +10,7 @@
       "axis": {"title": ""}
     },
     "x": {
-      "field": "opening_name",
+      "field": "opening_ply",
       "type": "ordinal",
       "axis": {"title": ""}
     },
@@ -19,7 +19,8 @@
       "field": "opening_ply",
       "type": "quantitative",
       "aggregate": "sum",
-      "scale": {"scheme": "oranges"}
+      "scale": {"scheme": "oranges"},
+      "title": "The frequency of opening plays"
     }
   },
   "config": {
