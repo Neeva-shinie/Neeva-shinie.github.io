@@ -1,86 +1,31 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 500,
-  "height": 300,
-  "title": "Age distribution of chess players across countries",
-  "data":{
-    "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
-  },
-    "mark": "circle",
-    "encoding": {
-      "x":{
-        "field":"Age Avg",
-        "type": "quantitative",
-        "title": "Age",
-        "axis": {"tickCount":7},
-        "scale":{"type": "linear", "domain":[20,60]}
-      },
-      "y":{
-
-        "field": "Num Players",
-        "type": "quantitative",
-        "title": "Players",
-        "axis": {"tickCount": 7},
-        "scale":{"type": "linear", "domain":[100,40000]}
-
-      },
-
-      "color":{
-        "field": "Country",
-        "type": "nominal"
-      },
-      "size":{
-        "field": "Num Players",
-        "type": "quantitative"
-      },
-      "tooltip": [
-        {"field": "Country", "type":"nominal"},
-        {"field": "Age Avg", "type": "quantitative" , "title": "Age"},
-        {"field": "Num Players", "type": "quantitative", "title":"Players"}
-      ]
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"},
+  "title": "Heatmap Sample",
+  "mark": "rect",
+  "encoding": {
+    "y": {
+      "field": "opening_name",
+      "type": "ordinal",
+      "axis": {"title": ""}
     },
-  "params": [
-    {
-      "name": "Country_selection",
-      "bind":{
-        "input": "select",
-        "options": [
-          null,
-          "Russia",
-          "India",
-          "Germany",
-          "Spain",
-          "France",
-          "Poland",
-          "Italy",
-          "Iran",
-          "Turkey",
-          "United States of America"
-        ],
-        "labels": [
-          "Show All",
-          "Russia",
-          "India",
-          "Germany",
-          "Spain",
-          "France",
-          "Poland",
-          "Italy",
-          "Iran",
-          "Turkey",
-          "United States of America"
-        ],
-        "name": "Selection of top 10 countries with most players "
-      }
+    "x": {
+      "field": "victory_status",
+      "type": "ordinal",
+      "axis": {"title": ""}
+    },
+    "size": {"field": "opening_ply", "type": "quantitative", "aggregate": "sum"},
+    "color": {
+      "field": "opening_ply",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "scale": {"scheme": "oranges"}
     }
-  ],
-  "transform": [
-    {"filter": "Country_selection == null || datum.Country == Country_selection" }
-  ]
-  
-
-
-
-
-
+  },
+  "config": {
+    "circle": {"color": "#ef3b2c"},
+    "rect": {"color": "#ef3b2c"},
+    "axis": {"ticks": false, "labelPadding": 10, "domain": false},
+    "view": {"strokeWidth": 0}
+  }
 }
