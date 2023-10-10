@@ -2,16 +2,12 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple donut chart with embedded data.",
     "data": {
-      "values": [
-        {"category": "GM", "value": 4},
-        {"category": "WGM", "value": 6},
-        {"category": "Total", "value": 10}
-      ]
+      "url" : "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test-demo.csv"
     },
     "mark": {"type": "arc", "innerRadius": 50},
     "encoding": {
-      "theta": {"field": "value", "type": "quantitative"},
-      "color": {"field": "category", "type": "nominal"}
+      "theta": {"field": "Total", "type": "quantitative"},
+      "color": {"field": "Category", "type": "nominal"}
     }
   }
   
