@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/games.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/sanitised_game.csv"},
   "title": "Heatmap Sample",
   "mark": "rect",
   "encoding": {
