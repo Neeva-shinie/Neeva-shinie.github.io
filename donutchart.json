@@ -23,7 +23,7 @@
       "mark": { "type": "arc", "tooltip": true, "innerRadius": 40,"outerRadius":100 },
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
-        "color": { "field": "key", "type": "nominal", "scale":{"domain": ["GMs", "WGMs"], "range":["#FF6347",	"#F8C8DC"]}},
+        "color": { "field": "key", "type": "nominal", "scale":{"domain": ["GMs", "WGMs"], "range":["#FF6347",	"#228B22"]}},
         "stroke":{"value": "grey"},
         "strokeWidth":{"value":1},
         "tooltip": [
@@ -51,7 +51,7 @@
       "mark": { "type": "arc", "tooltip": true, "innerRadius":60,"outerRadius":80 },
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
-        "color": { "field": "key", "type": "nominal",  "scale":{"domain": ["IMs", "WIMs"], "range":["#FF5E0E",	"#F8C8DC"]} },
+        "color": { "field": "key", "type": "nominal",  "scale":{"domain": ["IMs", "WIMs"], "range":["#F5761A",	"#7CFC00"]} },
         "stroke":{"value": "grey"},
         "strokeWidth":{"value":1},
         "tooltip": [
@@ -80,7 +80,7 @@
       "mark": { "type": "arc", "tooltip": true, "innerRadius":100,"outerRadius":80 },
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
-        "color": { "field": "key", "type": "nominal","scale":{"domain": ["FMs", "WFMs"], "range":["#FF8C00",	"#F8C8DC"]}  },
+        "color": { "field": "key", "type": "nominal","scale":{"domain": ["FMs", "WFMs"], "range":["#FFA836",	"#AFE1AF"]}  },
         "stroke":{"value": "grey"},
         "strokeWidth":{"value":1},
         "tooltip": [
