@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title":"Percentage of male and female in ranks",
+  "title":"Percentage of male and female in Chess ranking",
   "height": 300,
   "width": 500,
   "data": {
