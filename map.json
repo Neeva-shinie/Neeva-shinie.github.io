@@ -19,7 +19,13 @@
         "key": "Country",
         "fields": ["Num Players"]
       }
+    },
+    {
+      "calculate": "'No data for ' + datum.properties.NAME",
+      "as": "none"
+
     }],
+    
     "projection": {
       "type": "equalEarth"
     },

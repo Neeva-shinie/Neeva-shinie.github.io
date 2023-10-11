@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title":"Percentage of male and female in Chess ranking",
+  "title": "Percentage of male and female in Chess ranking",
   "height": 300,
   "width": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
   },
-  "layer":[
+  "layer": [
     {
       "transform": [
         {
@@ -20,20 +20,34 @@
         { "calculate": "(datum.WGMs / datum.total) * 100", "as": "WGMs" },
         { "fold": ["GMs", "WGMs"], "as": ["key", "value"] }
       ],
-      "mark": { "type": "arc", "tooltip": true, "innerRadius": 40,"outerRadius":100 },
+      "mark": {
+        "type": "arc",
+        "tooltip": true,
+        "innerRadius": 40,
+        "outerRadius": 100
+      },
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
-        "color": { "field": "key", "type": "nominal", "scale":{"domain": ["GMs", "WGMs"], "range":["#FF6347",	"#228B22"]}},
-        "stroke":{"value": "grey"},
-        "strokeWidth":{"value":1},
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "scale": {
+            "domain": ["GMs", "WGMs"],
+            "range": ["#FF6347", "#228B22"]
+          }
+        },
+        "stroke": { "value": "grey" },
+        "strokeWidth": { "value": 1 },
         "tooltip": [
           { "field": "key", "type": "nominal", "title": "Title" },
-          { "field": "value", "type": "quantitative" , "format": ".1f", "title": "Percentage"}
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percentage"
+          }
         ]
       }
-
-
-
     },
     {
       "transform": [
@@ -48,21 +62,34 @@
         { "calculate": "(datum.WIMs / datum.total) * 100", "as": "WIMs" },
         { "fold": ["IMs", "WIMs"], "as": ["key", "value"] }
       ],
-      "mark": { "type": "arc", "tooltip": true, "innerRadius":60,"outerRadius":80 },
+      "mark": {
+        "type": "arc",
+        "tooltip": true,
+        "innerRadius": 60,
+        "outerRadius": 80
+      },
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
-        "color": { "field": "key", "type": "nominal",  "scale":{"domain": ["IMs", "WIMs"], "range":["#F5761A",	"#7CFC00"]} },
-        "stroke":{"value": "grey"},
-        "strokeWidth":{"value":1},
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "scale": {
+            "domain": ["IMs", "WIMs"],
+            "range": ["#F5761A", "#7CFC00"]
+          }
+        },
+        "stroke": { "value": "grey" },
+        "strokeWidth": { "value": 1 },
         "tooltip": [
           { "field": "key", "type": "nominal", "title": "Title" },
-          { "field": "value", "type": "quantitative" , "format": ".1f", "title": "Percentage"}
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percentage"
+          }
         ]
       }
-
-
-
-
     },
     {
       "transform": [
@@ -77,21 +104,34 @@
         { "calculate": "(datum.WFMs / datum.total) * 100", "as": "WFMs" },
         { "fold": ["FMs", "WFMs"], "as": ["key", "value"] }
       ],
-      "mark": { "type": "arc", "tooltip": true, "innerRadius":100,"outerRadius":80 },
+      "mark": {
+        "type": "arc",
+        "tooltip": true,
+        "innerRadius": 100,
+        "outerRadius": 80
+      },
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
-        "color": { "field": "key", "type": "nominal","scale":{"domain": ["FMs", "WFMs"], "range":["#FFA836",	"#AFE1AF"]}  },
-        "stroke":{"value": "grey"},
-        "strokeWidth":{"value":1},
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "scale": {
+            "domain": ["FMs", "WFMs"],
+            "range": ["#FFA836", "#AFE1AF"]
+          }
+        },
+        "stroke": { "value": "grey" },
+        "strokeWidth": { "value": 1 },
         "tooltip": [
           { "field": "key", "type": "nominal", "title": "Title" },
-          { "field": "value", "type": "quantitative" , "format": ".1f", "title": "Percentage"}
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percentage"
+          }
         ]
       }
-
     }
   ]
-  
-  
-
 }
