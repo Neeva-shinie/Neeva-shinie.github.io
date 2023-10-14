@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Percentage of male and female in Chess ranking",
+    "height": 300,
+    "width": 700,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
+    },
+    "transform": [
+        {
+          "aggregate": [
+            { "op": "sum", "field": "FMs", "as": "FMs" },
+            { "op": "sum", "field": "WFMs", "as": "WFMs" }
+          ]
+        },
+        { "calculate": "datum.FMs + datum.WFMs", "as": "total" },
+        { "calculate": "(datum.FMs / datum.total) * 100", "as": "FMs" },
+        { "calculate": "(datum.WFMs / datum.total) * 100", "as": "WFMs" },
+        { "fold": ["FMs", "WFMs"], "as": ["key", "value"] }
+      ],
+      "mark": {
+        "type": "arc",
+        "tooltip": true,
+        "innerRadius": 120,
+        "outerRadius": 100
+      },
+      "encoding": {
+        "theta": { "field": "value", "type": "quantitative" },
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "scale": {
+            "domain": ["FMs", "WFMs"],
+            "range": ["#FFC0CB", "#AFE1AF"]
+          }
+        },
+        "stroke": { "value": "grey" },
+        "strokeWidth": { "value": 1 },
+        "tooltip": [
+          { "field": "key", "type": "nominal", "title": "Title" },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percentage"
+          }
+        ]
+    }
+}

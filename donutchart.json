@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Percentage of male and female in Chess ranking",
   "height": 300,
-  "width": 500,
+  "width": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
   },
@@ -23,7 +23,7 @@
       "mark": {
         "type": "arc",
         "tooltip": true,
-        "innerRadius": 40,
+        "innerRadius": 50,
         "outerRadius": 100
       },
       "encoding": {
@@ -33,91 +33,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["GMs", "WGMs"],
-            "range": ["#FF6347", "#228B22"]
-          }
-        },
-        "stroke": { "value": "grey" },
-        "strokeWidth": { "value": 1 },
-        "tooltip": [
-          { "field": "key", "type": "nominal", "title": "Title" },
-          {
-            "field": "value",
-            "type": "quantitative",
-            "format": ".1f",
-            "title": "Percentage"
-          }
-        ]
-      }
-    },
-    {
-      "transform": [
-        {
-          "aggregate": [
-            { "op": "sum", "field": "IMs", "as": "IMs" },
-            { "op": "sum", "field": "WIMs", "as": "WIMs" }
-          ]
-        },
-        { "calculate": "datum.IMs + datum.WIMs", "as": "total" },
-        { "calculate": "(datum.IMs / datum.total) * 100", "as": "IMs" },
-        { "calculate": "(datum.WIMs / datum.total) * 100", "as": "WIMs" },
-        { "fold": ["IMs", "WIMs"], "as": ["key", "value"] }
-      ],
-      "mark": {
-        "type": "arc",
-        "tooltip": true,
-        "innerRadius": 60,
-        "outerRadius": 80
-      },
-      "encoding": {
-        "theta": { "field": "value", "type": "quantitative" },
-        "color": {
-          "field": "key",
-          "type": "nominal",
-          "scale": {
-            "domain": ["IMs", "WIMs"],
-            "range": ["#F5761A", "#7CFC00"]
-          }
-        },
-        "stroke": { "value": "grey" },
-        "strokeWidth": { "value": 1 },
-        "tooltip": [
-          { "field": "key", "type": "nominal", "title": "Title" },
-          {
-            "field": "value",
-            "type": "quantitative",
-            "format": ".1f",
-            "title": "Percentage"
-          }
-        ]
-      }
-    },
-    {
-      "transform": [
-        {
-          "aggregate": [
-            { "op": "sum", "field": "FMs", "as": "FMs" },
-            { "op": "sum", "field": "WFMs", "as": "WFMs" }
-          ]
-        },
-        { "calculate": "datum.FMs + datum.WFMs", "as": "total" },
-        { "calculate": "(datum.FMs / datum.total) * 100", "as": "FMs" },
-        { "calculate": "(datum.WFMs / datum.total) * 100", "as": "WFMs" },
-        { "fold": ["FMs", "WFMs"], "as": ["key", "value"] }
-      ],
-      "mark": {
-        "type": "arc",
-        "tooltip": true,
-        "innerRadius": 100,
-        "outerRadius": 80
-      },
-      "encoding": {
-        "theta": { "field": "value", "type": "quantitative" },
-        "color": {
-          "field": "key",
-          "type": "nominal",
-          "scale": {
-            "domain": ["FMs", "WFMs"],
-            "range": ["#FFA836", "#AFE1AF"]
+            "range": ["#FF0000", "#000000"]
           }
         },
         "stroke": { "value": "grey" },
