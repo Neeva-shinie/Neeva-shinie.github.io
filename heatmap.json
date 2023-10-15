@@ -12,7 +12,7 @@
       "axis": {"title": ""}
     },
     "x": {
-      "field": "opening_ply",
+      "field": "winner",
       "type": "ordinal",
       "axis": {"title": ""}
     },
