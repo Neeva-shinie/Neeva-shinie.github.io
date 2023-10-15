@@ -4,31 +4,50 @@
   "title": "Frequency of openings in chess and their winning rate",
   "height": 300,
   "width": 500,
-  "mark": "rect",
-  "encoding": {
-    "y": {
-      "field": "victory_status",
-      "type": "ordinal",
-      "axis": {"title": ""}
+  "layer":[
+    {
+      "mark": "rect",
+      "encoding": {
+        "y": {
+          "field": "winner",
+          "type": "ordinal",
+          "axis": {"title": ""}
+        },
+        "x": {
+          "field": "victory_status",
+          "type": "ordinal",
+          "axis": {"title": ""}
+        },
+        "size": {"field": "opening_ply", "type": "quantitative", "aggregate": "sum"},
+        "color": {
+          "field": "opening_ply",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "scale": {"scheme": "oranges"},
+          "title": "The frequency of opening plays"
+        }
+      }
+
+
     },
-    "x": {
-      "field": "winner",
-      "type": "ordinal",
-      "axis": {"title": ""}
-    },
-    "size": {"field": "opening_ply", "type": "quantitative", "aggregate": "sum"},
-    "color": {
-      "field": "opening_ply",
-      "type": "quantitative",
-      "aggregate": "sum",
-      "scale": {"scheme": "oranges"},
-      "title": "The frequency of opening plays"
+    {
+      "mark":"text",
+      "encoding": {
+        "text":{"field":"opening_ply","type":"quantitative"},
+        "color":{
+          "condition": { "test":"datum[opening_ply]", "value": "black"},
+          "value": "white"
+        }
+
+      }
+
     }
-  },
+  ],
   "config": {
     "circle": {"color": "#ef3b2c"},
     "rect": {"color": "#ef3b2c"},
     "axis": {"ticks": false, "labelPadding": 10, "domain": false},
     "view": {"strokeWidth": 0}
   }
+
 }
