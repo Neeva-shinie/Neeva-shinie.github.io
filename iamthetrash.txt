@@ -1,4 +1,4 @@
 male to female ratio : GM,IM,FM [only add words]
 density of chess player across of countries- map [Complete]
 age and chess players [add words]
-fide ranking / heatmap [add words]
+fide ranking / heatmap [add words] changing the idiom to bar chart

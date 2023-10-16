@@ -8,11 +8,12 @@ h1 {
 
 body {
     background-color: burlywood;
+    background-image: url(c:\Users\Lenovo\Downloads\esma-q-MCC1g6Ziw-unsplash.jpg);
 }
 
 .page {
     width: 850px;
-    background-image: url(c:\Users\Lenovo\Downloads\esma-q-MCC1g6Ziw-unsplash.jpg);
+    
     background-size: cover;
     background-color: beige;
     margin: auto;
