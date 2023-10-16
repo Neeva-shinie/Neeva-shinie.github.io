@@ -1,66 +1,105 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/datasets/test.csv"},
-  "title": "FIDE Ranking of players across countries",
-  "height": 300,
-  "width": 500,
-  "layer":[
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "FIDE ranking across 20 top countries",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/datasets/test.csv"
+  },
+  "params": [
     {
-      "mark": "bar",
-      "encoding": {
-        "y": {
-          "field": "Country",
-          "type": "ordinal",
-          "scale":{
-            "domain":[
-              "Russia",
-              "India",
-              "Germany",
-              "Spain",
-              "France",
-              "Poland",
-              "Italy",
-              "Iran",
-              "Turkey",
-              "United States of America",
-              "Hungary",
-              "Greece",
-              "Brazil",
-              "Serbia",
-              "Romania",
-              "Ukraine",
-              "Netherlands",
-              "Argentina",
-              "Greenland",
-              "Slovakia",
-              "Sweden"
-            ]
-          },
-          "axis": {"title": ""}
-        },
-        "x": {
-          "field": "FIDE Average",
-          "type": "quantitative",
-          "axis": {"title": ""}
-        },
-        "color": {
-          "field": "FIDE Average",
-          "type": "quantitative",
-          "aggregate": "sum",
-          "scale": {"scheme": "oranges"},
-          "title": "The frequency of opening plays"
-        },
-        "tooltip": [
-          {"field": "Country", "type": "nominal", "title":"Country"},
-          {"field": "FIDE Average", "type": "quantitative", "title": "FIDE rank"}
+      "name": "highlight",
+      "select": {"type": "point", "on": "pointerover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+  "mark": {
+    "type": "bar",
+    "stroke": "black",
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {
+      "field": "Country", 
+      "type": "ordinal", 
+      "scale":{
+        "domain":[                        
+          "Russia",
+          "India",
+          "Germany",
+          "Spain",
+          "France",
+          "Poland",
+          "Italy",
+          "Iran",
+          "Turkey",
+          "United States of America",
+          "Hungary",
+          "Greece",
+          "Brazil",
+          "Serbia",
+          "Romania",
+          "Ukraine",
+          "Netherlands",
+          "Argentina",
+          "Greenland",
+          "Slovakia",
+          "Sweden"
         ]
       }
-
-
-
+    },
+    "y": {"field": "FIDE Average", "type": "quantitative"},
+    "fillOpacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "color":{
+      "field": "Country", 
+      "type": "ordinal",
+      "scale":{
+        "domain":[                        
+          "Russia",
+          "India",
+          "Germany",
+          "Spain",
+          "France",
+          "Poland",
+          "Italy",
+          "Iran",
+          "Turkey",
+          "United States of America",
+          "Hungary",
+          "Greece",
+          "Brazil",
+          "Serbia",
+          "Romania",
+          "Ukraine",
+          "Netherlands",
+          "Argentina",
+          "Greenland",
+          "Slovakia",
+          "Sweden"
+        ]
+      }
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 1
+        }
+      ],
+      "value": 0
     }
-
-  ]
-
+  },
+  "config": {
+    "scale": {
+      "bandPaddingInner": 0.2
+    }
+  }
 }
   
