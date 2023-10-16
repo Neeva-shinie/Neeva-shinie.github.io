@@ -1,13 +1,68 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A simple donut chart with embedded data.",
-    "data": {
-      "url" : "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test-demo.csv"
-    },
-    "mark": {"type": "arc", "innerRadius": 50},
-    "encoding": {
-      "theta": {"field": "Total", "type": "quantitative"},
-      "color": {"field": "Category", "type": "nominal"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "data": {"url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/datasets/test.csv"},
+  "title": "FIDE Ranking of players across countries",
+  "height": 300,
+  "width": 500,
+  "layer":[
+    {
+      "mark": "tick",
+      "encoding": {
+        "y": {
+          "field": "Country",
+          "type": "ordinal",
+          "scale":{
+            "domain":[
+              "Russia",
+              "India",
+              "Germany",
+              "Spain",
+              "France",
+              "Poland",
+              "Italy",
+              "Iran",
+              "Turkey",
+              "United States of America",
+              "Hungary",
+              "Greece",
+              "Brazil",
+              "Serbia",
+              "Romania",
+              "Ukraine",
+              "Netherlands",
+              "Argentina",
+              "Greenland",
+              "Slovakia",
+              "Sweden"
+            ]
+          },
+          "axis": {"title": ""}
+        },
+        "x": {
+          "field": "FIDE Average",
+          "type": "quantitative",
+          "axis": {"title": ""}
+        },
+        "size": {"field": "Country", "type": "ordinal", "aggregate": "sum"},
+        "color": {
+          "field": "FIDE Average",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "scale": {"scheme": "oranges"},
+          "title": "The frequency of opening plays"
+        }
+      }
+
+
     }
+
+  ],
+  "config": {
+    "circle": {"color": "#ef3b2c"},
+    "rect": {"color": "#ef3b2c"},
+    "axis": {"ticks": false, "labelPadding": 10, "domain": false},
+    "view": {"strokeWidth": 0}
   }
+
+}
   
