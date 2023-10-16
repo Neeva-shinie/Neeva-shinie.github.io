@@ -1,16 +1,138 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Percentage of male and female players in different ranks",
-    "width": 500,
-    "height": 300,
-    "data": {
-      "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
-    },
-    "layer": [
-      {
-          
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": "container",
+  "height": 250,
+  "title": "Bullying trends by Gender",
+  "data": {
+      "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VictoriaWideData.csv"
+  },
+  "encoding": {
+      "x": {
+          "field": "Year",
+          "type": "temporal",
+          "title": "Year"
+      },
+      "y": {
+          "field": "Percent",
+          "type": "quantitative",
+          "title": "Percent Bullied"
+      },
+      "color": {
+          "condition": {
+              "selection": "hover",
+              "field": "Gender",
+              "type": "nominal",
+              "legend": null
+          },
+          "value": "grey"
+      },
+      "opacity": {
+          "condition": {
+              "selection": "hover",
+              "value": 1
+          },
+          "value": 0.2
       }
-    ]
-
+  },
+  "layer": [
+      {
+          "description": "transparent layer to make it easier to trigger selection",
+          "selection": {
+              "hover": {
+                  "type": "single",
+                  "on": "mouseover",
+                  "empty": "all",
+                  "fields": [
+                      "Gender"
+                  ]
+              }
+          },
+          "mark": {
+              "type": "line",
+              "point": true,
+              "strokeWidth": 8,
+              "stroke": "transparent"
+          },
+          "encoding": {
+              "tooltip": [
+                  {
+                      "field": "Percent",
+                      "type": "quantitative",
+                      "title": "Percent Bullied"
+                  },
+                  {
+                      "field": "Year",
+                      "type": "temporal",
+                      "timeUnit": "year",
+                      "title": "Year"
+                  },
+                  {
+                      "field": "Gender",
+                      "type": "nominal"
+                  }
+              ]
+          }
+      },
+      {
+          "mark": "line"
+      },
+      {
+          "encoding": {
+              "x": {
+                  "aggregate": "max",
+                  "field": "Year"
+              },
+              "y": {
+                  "aggregate": {
+                      "argmax": "Year"
+                  },
+                  "field": "Percent"
+              }
+          },
+          "layer": [
+              {
+                  "mark": {
+                      "type": "circle"
+                  }
+              },
+              {
+                  "mark": {
+                      "type": "text",
+                      "align": "left",
+                      "font": "Oxygen",
+                      "dx": 4
+                  },
+                  "encoding": {
+                      "text": {
+                          "field": "Gender",
+                          "type": "nominal"
+                      }
+                  }
+              }
+          ]
+      }
+  ],
+  "config": {
+      "view": {
+          "stroke": null
+      },
+      "axis": {
+          "labelFont": "Oxygen",
+          "titleFont": "Oxygen"
+      },
+      "legend": {
+          "labelFont": "Oxygen",
+          "titleFont": "Oxygen"
+      },
+      "header": {
+          "labelFont": "Oxygen",
+          "titleFont": "Oxygen"
+      },
+      "title": {
+          "font": "Oxygen",
+          "fontSize": 16,
+          "fontWeight": 600
+      }
   }
+}
   
