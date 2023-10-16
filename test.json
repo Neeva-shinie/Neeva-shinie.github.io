@@ -6,7 +6,7 @@
   "width": 500,
   "layer":[
     {
-      "mark": "tick",
+      "mark": "bar",
       "encoding": {
         "y": {
           "field": "Country",
@@ -43,26 +43,24 @@
           "type": "quantitative",
           "axis": {"title": ""}
         },
-        "size": {"field": "Country", "type": "ordinal", "aggregate": "sum"},
         "color": {
           "field": "FIDE Average",
           "type": "quantitative",
           "aggregate": "sum",
           "scale": {"scheme": "oranges"},
           "title": "The frequency of opening plays"
-        }
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title":"Country"},
+          {"field": "FIDE Average", "type": "quantitative", "title": "FIDE rank"}
+        ]
       }
+
 
 
     }
 
-  ],
-  "config": {
-    "circle": {"color": "#ef3b2c"},
-    "rect": {"color": "#ef3b2c"},
-    "axis": {"ticks": false, "labelPadding": 10, "domain": false},
-    "view": {"strokeWidth": 0}
-  }
+  ]
 
 }
   
