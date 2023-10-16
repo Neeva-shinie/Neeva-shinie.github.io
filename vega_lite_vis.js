@@ -1,6 +1,6 @@
 var vg_1 = "cholopeth.json";
 var vg_2 = "bubblechart.json";
-var vg_3 = "heatmap.json";
+var vg_3 = "FIDEmap.json";
 var vg_4 = "GMdonut.json";
 var vg_5 = "FMdonut.json";
 var vg_6 = "IMdonut.json";
@@ -13,7 +13,7 @@ vegaEmbed("#bubble_chart", vg_2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-vegaEmbed("#heatmap", vg_3).then(function(result) {
+vegaEmbed("#FIDE_map", vg_3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
