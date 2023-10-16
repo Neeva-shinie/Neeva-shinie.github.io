@@ -4,7 +4,7 @@
     "height": 300,
     "title": "Age distribution of chess players across countries",
     "data":{
-      "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/test.csv"
+      "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/datasets/test.csv"
     },
     "layer": [
         {

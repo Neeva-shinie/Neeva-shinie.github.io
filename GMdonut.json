@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Percentage of male and female in Grandmaster ranking",
+  "height": 300,
+  "width": 300,
+  "background": "lightgrey",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/datasets/test.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        { "op": "sum", "field": "GMs", "as": "GMs" },
+        { "op": "sum", "field": "WGMs", "as": "WGMs" }
+      ]
+    },
+    { "calculate": "datum.GMs + datum.WGMs", "as": "total" },
+    { "calculate": "(datum.GMs / datum.total) * 100", "as": "GMs" },
+    { "calculate": "(datum.WGMs / datum.total) * 100", "as": "WGMs" },
+    { "fold": ["GMs", "WGMs"], "as": ["key", "value"] }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "arc",
+        "tooltip": true,
+        "innerRadius": 50,
+        "outerRadius": 100
+      },
+      "encoding": {
+        "theta": { "field": "value", "type": "quantitative" },
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "title":"Gender",
+          "scale": {
+            "domain": ["GMs", "WGMs"],
+            "range": ["#008080", "#FFA500"]
+          }
+        },
+        "stroke": { "value": "black" },
+        "strokeWidth": { "value": 1 },
+        "tooltip": [
+          { "field": "key", "type": "nominal", "title": "Gender" },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Percentage"
+          }
+        ]
+      }
+    },
+    {
+      "mark":{"type":"text", "radius": 50},
+      
+      "encoding":{ 
+        "text":{ "field": "value", "type": "quantitative"}
+
+      
+      }
+    }  
+  ]
+}
