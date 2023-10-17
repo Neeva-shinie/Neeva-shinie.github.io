@@ -2,9 +2,10 @@ body *{
     font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
+#Title {
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 3.75em;
     text-align: center;
     color: #382903ea;
 }
@@ -13,6 +14,17 @@ body {
     background-image: url(Chess.png);
 }
 
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    color: #382903ea;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
 .page {
     width: 850px;
     background-size: cover;
@@ -79,6 +91,15 @@ h1 {
 }
 
 hr {
-    margin: 5% 0;
+    margin-top: 5%;
+    margin-bottom: 2%;
     border: 1px solid brown;
+}
+
+span {
+    font-weight: bold;
+}
+
+.number {
+    color: red;
 }
