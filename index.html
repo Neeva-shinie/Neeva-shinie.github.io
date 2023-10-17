@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <title>Popularity of Chess</title>
     <meta charset="UTF-8">
@@ -25,39 +26,75 @@
   <link rel="stylesheet" type="text/css" href="layout.css" media="all">
     
     <script src="vega_lite_vis.js"></script>
-    
-    <title>Chess Visualisation </title>
 </head>
 
 <body>
     
     <div class="page">
         <!-- Title and subtext -->
-        <div class="pure-g">
-            <div class="pure-u-1-1">
-                <h1>Popularity of Chess</h1>
-                <p>Chess has been considered as the most mentally challenging sport in the world. This sport has been expanding on </p>
+        <!-- <div class="pure-g">
+            <div class="pure-u-1-1"> -->
+                <h1>Popularity of Chess </h1>
+                <p>Chess boasts a steadfast and global popularity that has endured for centuries. 
+                    This ancient board game's appeal lies in its intellectual challenge, strategic depth, and universal accessibility. 
+                    Players of all ages and backgrounds find solace in the intricate battle of wits it offers. 
+                    From casual players engaging in friendly matches to competitive grandmasters participating in high-stakes tournaments, chess transcends boundaries and cultures. 
+                    In the digital age, it has found new life and growth, with online platforms, streaming, and educational resources making it more accessible than ever. 
+                    The sense of achievement derived from honing one's chess skills, along with the joy of outsmarting opponents, continues to draw in enthusiasts worldwide.
+                    In this visualisation, we will see the overall popularity of chess in the world today.
+                </p>
+            <!-- </div> -->
+        <!-- </div> -->
+                <hr>
+                <div id="choropleth_map" class="diagram"></div>
+                <p>
+                    The map above shows the number of chess player across the world. We can see that the countries like Russia, India and Germany has the highest density of chess players
+                    compared to the countries around South Africa region which has lesser. This is due to the exposure of such countries about Chess and their facilities available for people to
+                    play them and be more recognised. 
+                </p>
+
+                <hr>
+
+                <div id="bubble_chart" class="diagram"></div>
+                <p>
+                    In this bubble chart we can see that most chess players are still below the age of 60. 
+                    We can also observe that India has the youngest average chess players which is an average age of 27 year olds.
+                    This shows that some countries emphasise on providing exposure towards Chess at a very young age. 
+                    This allows players to train and slowly climb up the reins of being Grandmaster.
+                </p>  
+                
+                <hr>
+        
+                <div id="FIDE_map" class="diagram"></div>
+                <p>
+                    FIDE is the Fédération Internationale des Échecs also known as the World Chess Federation. 
+                    This is the second most highest rank a chess player can obtain before the Grandmaster rank.
+                    The map shows the average FIDE ranking across all countries. We can see the countries that has lighter colour has higher FIDE ranking.
+                    Higher FIDE rankers can opt to be chess master and tutor and compete further for the title of Grandmaster.
+                    Cambodia has the highest average FIDE ranking compared to most countries around the world.
+                </p>
+            <hr>
+            <div class="donut-container">
+                <div class="donut-holder">
+                    <p>Percentage of male and female in Grandmaster ranking</p>
+                    <div id="GMdonutchart" style="padding: 0;" class = "diagram donut"></div>
+                </div>
+                <div class="donut-holder">
+                    <p>Percentage of male and female in FIDE ranking</p>
+                    <div id="FMdonutchart" style="padding: 0;" class = "diagram donut"></div>
+                </div>
+                <div class="donut-holder">
+                    <p>Percentage of male and female in International ranking</p>
+                    <div id="IMdonutchart" style="padding: 0;" class = "diagram donut"></div>
+                </div>
             </div>
-        </div>
-            <div id="choropleth_map"></div>
-            <p>TEXT/Text/text/text</p>
-
-            <div id="bubble_chart"></div>
-            <p>TEXT/Text/text/text</p>
-
-            <div id="FIDE_map"></div>
-            <p>TEXT/Text/text/text</p>
-
-            <div id="GMdonutchart"></div>
-            <p>TEXT/Text/text/text</p>
-
-            <div id="FMdonutchart"></div>
-            <p>TEXT/Text/text/text</p>
-
-            <div id="IMdonutchart"></div>
-            <p>TEXT/Text/text/text</p>
+            <p>
+                The exposure of chess has reached multiple countries, cultures and also genders. We can see there is an increase in female contestants participating in more Chess competition.
+                On average, the percentage of male and female contestants holding the title of International Master are 82.4% and 17.6% respectively, similar to the title FIDE master.
+                However the percentage of female Grandmasters reduced by 2%. 
+                
+            </p>
     </div>
-
 
 </body>
 

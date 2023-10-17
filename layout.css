@@ -3,20 +3,22 @@ body *{
 }
 
 h1 {
-    font-weight: 900;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    color: #382903ea;
 }
 
 body {
-    background-color: burlywood;
-    background-image: url(c:\Users\Lenovo\Downloads\esma-q-MCC1g6Ziw-unsplash.jpg);
+    background-image: url(Chess.png);
 }
 
 .page {
     width: 850px;
-    
     background-size: cover;
-    background-color: beige;
-    margin: auto;
+    background-color:rgb(199,199,199,1);
+    border-radius: 25px;
+    margin: 3.5% auto;
     padding: 50px;
     padding-top: 35px;
 }
@@ -44,4 +46,39 @@ h1 {
 
 .small-font {
     font-size: 14px;
+}
+
+.diagram {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 95%;
+}
+
+.donut-container {
+    width: 100%;
+    padding: 0;
+}
+
+.donut-holder {
+    display: inline-block;
+    width:33%;
+}
+
+.diagram.donut {
+    width:100%;
+}
+
+.donut-holder p {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+}
+
+hr {
+    margin: 5% 0;
+    border: 1px solid brown;
 }

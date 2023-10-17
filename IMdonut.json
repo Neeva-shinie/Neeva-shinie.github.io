@@ -1,9 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Percentage of male and female in International ranking",
-    "height": 300,
-    "width": 300,
-    "background": "lightgrey",
+    "height": 200,
+    "width": "container",
+    "background":"#c7c7c7",
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      }
+    },
     "data": {
       "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/datasets/test.csv"
     },
@@ -19,11 +23,11 @@
         { "calculate": "(datum.WIMs / datum.total) * 100", "as": "WIMs" },
         { "fold": ["IMs", "WIMs"], "as": ["key", "value"] }
       ],
-      "mark": {
+      "layer": [{"mark": {
         "type": "arc",
         "tooltip": true,
-        "innerRadius": 60,
-        "outerRadius": 100
+        "innerRadius": 50,
+        "outerRadius": 85
       },
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
@@ -47,6 +51,10 @@
             "title": "Percentage"
           }
         ]
+    }},
+    {
+      "mark": {"type": "text", "radius": 80, "size":15},
+      "encoding": {"text": {"field": "value", "type": "quantitative"}}
     }
-
+  ]
 }

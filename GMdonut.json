@@ -1,9 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Percentage of male and female in Grandmaster ranking",
-  "height": 300,
-  "width": 300,
-  "background": "lightgrey",
+  "height": 200,
+  "width": "container",
+  "background":"#c7c7c7",
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/datasets/test.csv"
   },
@@ -25,7 +29,7 @@
         "type": "arc",
         "tooltip": true,
         "innerRadius": 50,
-        "outerRadius": 100
+        "outerRadius": 85
       },
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
@@ -50,15 +54,6 @@
           }
         ]
       }
-    },
-    {
-      "mark":{"type":"text", "radius": 50},
-      
-      "encoding":{ 
-        "text":{ "field": "value", "type": "quantitative"}
-
-      
-      }
-    }  
+    }
   ]
 }

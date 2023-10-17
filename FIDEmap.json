@@ -3,7 +3,12 @@
   "title": "Average FIDE ranking of players per country",
   "width": 500,
   "height": 300,
-  "background":"lightgray",
+  "background":"#c7c7c7",
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  },
   "layer": [
       {
           "data":{
@@ -72,8 +77,9 @@
               "title" : "FIDE rank",
               "type": "quantitative",
               "scale": {
-                "scheme": "oranges"
+                "scheme": "viridis"
               }
+              
             }, 
       
             "tooltip": [
