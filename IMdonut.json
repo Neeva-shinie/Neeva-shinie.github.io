@@ -51,10 +51,6 @@
             "title": "Percentage"
           }
         ]
-    }},
-    {
-      "mark": {"type": "text", "radius": 80, "size":15},
-      "encoding": {"text": {"field": "value", "type": "quantitative"}}
-    }
+    }}
   ]
 }
