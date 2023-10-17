@@ -11,10 +11,6 @@
     "data": {
       "url": "https://raw.githubusercontent.com/Neeva-shinie/Neeva-shinie.github.io/master/datasets/test.csv"
     },
-    "params": [{
-      "name": "arcs",
-      "select": "point"
-    }],
     "transform": [
         {
           "aggregate": [
@@ -36,19 +32,13 @@
       "encoding": {
         "theta": { "field": "value", "type": "quantitative" },
         "color": {
-          "condition": {
-            "param": "arcs",
-            "field": "key",
-            "type": "nominal",
-            "scale": {
-              "domain": ["FMs", "WFMs"],
-              "range": ["#00008B", "#FFFF00"]
-            },
-            "value": "gray"
-          },
           "field": "key",
           "title": "Gender",
-          "type": "nominal"
+          "type": "nominal",
+          "scale": {
+            "domain": ["FMs", "WFMs"],
+            "range": ["#00008B", "#FFFF00"]
+          }
         },
         "stroke": { "value": "black" },
         "strokeWidth": { "value": 1 },

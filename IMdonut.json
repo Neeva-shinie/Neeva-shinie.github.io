@@ -21,7 +21,9 @@
         { "calculate": "datum.IMs + datum.WIMs", "as": "total" },
         { "calculate": "(datum.IMs / datum.total) * 100", "as": "IMs" },
         { "calculate": "(datum.WIMs / datum.total) * 100", "as": "WIMs" },
-        { "fold": ["IMs", "WIMs"], "as": ["key", "value"] }
+        { "fold": ["IMs", "WIMs"], "as": ["key", "value"] },
+        {"calculate": "cos(2*PI*(datum.cum-datum.value/2)/datum.total)", "as": "y"},
+        {"calculate": "sin(2*PI*(datum.cum-datum.value/2)/datum.total)", "as": "x"}
       ],
       "layer": [{"mark": {
         "type": "arc",
